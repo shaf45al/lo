@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel; 
 import javax.swing.JTextField; 
  
-import com.sanifrey.test1.StrVyplata; 
+import aaa.StrVyplata; 
  
 /**   
  * Объявляем public класс, в котором осуществляется взнос страховой премии,  

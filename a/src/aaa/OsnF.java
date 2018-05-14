@@ -70,11 +70,11 @@ public class OsnF {
 		/**    
 		 * Устанавливаем цвет текста кнопки StrakhovatelB    
 		 */  
-		StrakhovatelB.setForeground(Color.BLUE);   
+		StrakhovatelB.setForeground(Color.RED);   
 		/**    
 		 * Устанавливаем цвет текста кнопки StrakhovshikB    
 		 */   
-		StrakhovshikB.setForeground(Color.RED);                    
+		StrakhovshikB.setForeground(Color.BLUE);                    
 		/**    
 		 *Добавляем слушателя к кнопке StrakhovatelB с помощью вызова    
 		 *addActionListener    
