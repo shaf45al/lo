@@ -95,7 +95,7 @@ public class StrVyplata{
 				 * UznatStrVyp(int poluchD)      
 				 */   
 				JLabel strVyplataL=new   JLabel(String.valueOf(UznatStrVyp(Integer.parseInt(poluchD)))); 
-				strVyplataL.setFont(strVyplataL.getFont().deriveFont(300f));
+				//strVyplataL.setFont(strVyplataL.getFont().deriveFont(300f));
  
 				JLabel pravila=new JLabel("Для получения страховой выплаты");    
 				JLabel pravila1=new  JLabel("обратитесь в приемный отдел по адресу: ул.Гафури, д.76"); 

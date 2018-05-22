@@ -65,7 +65,8 @@ public class Strakhovatel{
 		 * и компонент-контерйнер panel класса JPanel, который будет содержать   
 		 * вышеперечисленные компоненты    
 		 */  
-		JPanel panel=new JPanel();  
+		JPanel panel=new JPanel(); 
+		//panel.setBackground(Color.BLUE);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));   
 		JButton zaregat=new JButton("Регистрация");  
 		zaregat.setForeground(Color.BLUE); 

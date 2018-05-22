@@ -58,18 +58,21 @@ public class Strakhovshik{
 		/**   
 		 * Устанавлваем менеджер FlowLayout для расположения компонентов на фрейме   
 		 */   
-		s.setLayout(new FlowLayout());    
+		s.setLayout(new FlowLayout());
+		//s.getContentPane().setBackground(Color.BLUE);
  
 		/**    
 		 * Создаем компонент-контерйнер panel класса JPanel, который будет содержать панель   
 		 *для вида страхования, метки и кнопку "Сохранить"    
 		 */   
 		JPanel panel=new JPanel();   
+		//panel.setBackground(Color.BLUE);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));      
 		/**    
 		 * Создаем компонент-контерйнер panelStrPredpRisk класса JPanel для вида страхования    
 		 */   
 		JPanel panelStrPredpRisk=new JPanel();   
+		//panelStrPredpRisk.setBackground(Color.BLUE);
 		/**    
 		 * Создаем компонент label класса JLabel     
 		 */   
@@ -87,6 +90,7 @@ public class Strakhovshik{
 		 */  
 		JButton VnestiKoef=new JButton("Сохранить");       
 		 final JTextField predprKoefTF=new JTextField("0");       
+		 //predprKoefTF.setBackground(Color.BLUE);
 		/**    
 		 * Устанавливаем выравнивание компонентов panelStrPredpRisk, label и VnestiKoef   
 		 *(по середине)    

@@ -160,7 +160,7 @@ public class LichnyKab{
 		vnestiVznos.setAlignmentX(Component.CENTER_ALIGNMENT);      
 		vykhod.setAlignmentX(Component.CENTER_ALIGNMENT);      
 		polychitVyplaty.setAlignmentX(Component.CENTER_ALIGNMENT); 
-		vykhod.setPreferredSize(new Dimension(100,100));
+		//vykhod.setPreferredSize(new Dimension(100,100));
 		
 
 		/**      

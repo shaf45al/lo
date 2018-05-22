@@ -3,6 +3,7 @@
  */ 
 package aaa;
 
+import java.awt.Color;
 /**  
  * Подключаем библиотеки  
  */ 
@@ -21,7 +22,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane; 
 import javax.swing.JPanel; 
-import javax.swing.JTextField; 
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource; 
  
 /**   
  * Объявляем public класс, в котором осуществляется регистрация в системе 
@@ -48,7 +51,10 @@ public class Registracya{
 	 * Проверяем, открыто ли окно регистрации на момент подачи новой заявки    
 	 * (открыто - переменная Strakhovatel.isRun1 равна true)    
 	 */   
-	if(Strakhovatel.isRun1==false){        
+	if(Strakhovatel.isRun1==false){   
+		//UIManager.put("OptionPane.background", new ColorUIResource(111,1,24));
+		//UIManager.put("Panel.background", new ColorUIResource(111,1,24));
+		
 		/**     
 		 * Переменной opcion присваивается целое число, указывающее опцию,   
 		 * выбранную пользователем в диалоговом окне подтверждения действия     
@@ -104,7 +110,8 @@ public class Registracya{
 	String[] vidStr = {                                     
 			"страхование предпринимательких рисков"      
 	};     
-	final JComboBox<String> comboBoxVidStr = new JComboBox<String>(vidStr);        
+	final JComboBox<String> comboBoxVidStr = new JComboBox<String>(vidStr);     
+	//comboBoxVidStr.setBackground(Color.BLUE);
 	final JButton PodatZayavky=new JButton("Завершить регистрацию");           
 	final JLabel FIOL= new JLabel("Введите ФИО: ");     
 	final JLabel parolL= new JLabel("Придумайте пароль: ");    

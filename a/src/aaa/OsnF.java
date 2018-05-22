@@ -106,7 +106,7 @@ public class OsnF {
 		panel.add(StrakhovshikB); 
  
 		/**    
-		 * Создаем панель panel1    
+		 * Создаем панель panel1c    
 		 */   
 		JPanel panel1=new JPanel();  
 		panel1.setLayout(new FlowLayout());   
@@ -118,6 +118,8 @@ public class OsnF {
 		 * Создаём компонент kopiright класса JLabel и добавляем его на панель panel1    
 		 */  
 		JLabel kopiright= new JLabel("copyright © 2018"); 
+		//kopiright.setForeground(Color.RED);
+		//kopiright.setFont(new Font("TimesRoman", Font.BOLD, 100));
 		panel1.add(kopiright);            
 		/**    
 		 *Добавляем panel и panel1 на фрейм    
