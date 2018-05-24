@@ -9,6 +9,7 @@ import java.awt.Color;
  */ 
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout; 
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener; 
@@ -137,7 +138,7 @@ public class LichnyKab{
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); 
 		//panel.setBackground(Color.orange);
 		//s.getContentPane().setBackground(Color.orange);
-		JButton vykhod=new JButton("Выход");    
+		JButton vykhod=new JButton("Выход");  
 		JButton vnestiVznos=new JButton("Внести взнос");         
 		JLabel ostatokPoVznosamL= new JLabel("Остаток по страховым взносам,руб: ");    
 		JButton polychitVyplaty=new JButton("Получить страховую выплату");         
