@@ -3,6 +3,7 @@
  */
 package aaa;
 
+import java.awt.Color;
 /**  
  * Подключаем библиотеки  
  */ 
@@ -134,7 +135,8 @@ public class LichnyKab{
 		 */ 
 		JPanel panel=new JPanel();    
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); 
- 
+		//panel.setBackground(Color.orange);
+		//s.getContentPane().setBackground(Color.orange);
 		JButton vykhod=new JButton("Выход");    
 		JButton vnestiVznos=new JButton("Внести взнос");         
 		JLabel ostatokPoVznosamL= new JLabel("Остаток по страховым взносам,руб: ");    
