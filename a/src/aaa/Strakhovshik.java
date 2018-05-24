@@ -7,7 +7,8 @@ package aaa;
  * Подключаем библиотеки  
  */ 
 import java.awt.Color; 
-import java.awt.Component; 
+import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.FlowLayout; 
 import java.awt.GridBagConstraints; 
 import java.awt.GridBagLayout; 
@@ -88,7 +89,7 @@ public class Strakhovshik{
 		/**    
 		 * Создаем компонент VnestiKoef класса JButton    
 		 */  
-		JButton VnestiKoef=new JButton("Сохранить");       
+		JButton VnestiKoef=new JButton("Сохранить");  
 		 final JTextField predprKoefTF=new JTextField("0");       
 		 //predprKoefTF.setBackground(Color.BLUE);
 		/**    

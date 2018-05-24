@@ -65,7 +65,7 @@ public class OsnF {
 		JButton StrakhovatelB=new JButton("Страхователь");   
 		JButton StrakhovshikB=new JButton("Страховщик"); 
 		//StrakhovshikB.setFont(new Font("TimesRoman", Font.BOLD, 100));
-		//StrakhovshikB.setPreferredSize(new Dimension(100,100));
+		//StrakhovshikB.setPreferredSize(new Dimension(500,300));
 		//StrakhovshikB.setBackground(Color.blue);
 		/**    
 		 * Устанавливаем цвет текста кнопки StrakhovatelB    
