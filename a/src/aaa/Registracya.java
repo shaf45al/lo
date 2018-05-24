@@ -96,6 +96,8 @@ public class Registracya{
 	 * Создаем компонент-контерйнер panel класса JPanel      
 	 */     
 	final JPanel panel=new JPanel();     
+	panel.setBackground(Color.orange);
+	s.getContentPane().setBackground(Color.orange);
 	panel.setLayout(new GridBagLayout());          
 	/**      
 	 * Создаем компоненты для личных данных пользователя      
