@@ -9,8 +9,8 @@ import java.awt.Color;
  */ 
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout; 
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener; 
 import java.io.FileNotFoundException; 
@@ -124,7 +124,7 @@ public class LichnyKab{
 		 * Устанавлваем менеджер GridLayout для расположения компонентов на            
 		 * фрейме       
 		 */      
-		s.setLayout(new GridLayout(2,20,1,20));         
+		s.setLayout(new FlowLayout());         
 		/**       
 		 * Создаем компоненты        
 		 * vykhod класса JButton,        
