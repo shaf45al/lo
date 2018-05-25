@@ -2,6 +2,7 @@
  * Устанавливаем принадлежность класса к пакету  
  */ 
 package aaa;
+import java.awt.Color;
 /**  
  * Подключаем библиотеки  
  */ 
@@ -99,7 +100,7 @@ public class StrVyplata{
  
 				JLabel pravila=new JLabel("Для получения страховой выплаты");    
 				JLabel pravila1=new  JLabel("обратитесь в приемный отдел по адресу: ул.Гафури, д.76"); 
- 
+				//pravila.setForeground(Color.pink);pravila1.setForeground(Color.pink);
 				/**      
 				 * Устанавливаем выравнивание компонентов label, strVyplataL, pravila и   
 				 * pravila1 (по середине)      
