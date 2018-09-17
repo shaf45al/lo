@@ -6,126 +6,95 @@ package aaa;
 /**  
  * Подключаем библиотеки  
  */ 
-import java.awt.BorderLayout; 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout; 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel; 
+
  
 /**   
  * Объявляем public класс, в котором осуществляется выбор вида пользователя  
  */ 
 public class OsnF {  
-	/**   
-	 *  Создаём объект obj2 класса Formuly   
-	 */   
-	static Formuly obj2 = new Formuly();     
-	/**     
-	 * Объявляем конструктор класса    
-	 */   
-	public OsnF(){   }     
-	/**    
-	 * Метод zapusk    
-	 */   
-	public void zapusk(){   
+  
+	private JButton Strakhovatel;
+	private JButton StrakhovshikB;
+	
+	private JButton ButtonName[]= {Strakhovatel,StrakhovshikB};
+	private String Button_keys_label[] = {"Страхователь","Страховщик"};
+	
+	 static Formuly obj2 = new Formuly();     
+	 private ComponentsCreator cc; 
+	 private PanelCreator pc;   
+	
+	 
+	 
+	public void zapusk(){   	
 		/**   
 		 * Создаём объект класса JFrame   
 		 */   
-		JFrame s=new JFrame();      
+		JFrame s=new JFrame(); 
+		pc=new PanelCreator();
+		cc = new ComponentsCreator(s);
+		
 		/**    
 		 * Выполняем настройку окна    
 		 */   
-		s.setTitle("Добро пожаловать!  Выберите пользователя: ");    
-		s.setSize(600,400);    
-		/**    
-		 * Указываем операцию, которая будет произведена при закрытии окна    
-		 */  
-		s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
-		/**    
-		 * Размещаем окно по середине экрана     
-		 */  
-		s.setLocationRelativeTo(null);    
-		/**   
-		 * Устанавлваем менеджер BorderLayout для расположения компонентов на фрейме   
-		 */  
-		s.setLayout(new BorderLayout()); 
-		/**    
-		 * Создаем кнопки StrakhovatelB и StrakhovshikB для выбора вида пользователя    
-		 * и панель panel, на которой они будут расположены    
-		 */   
-		JPanel panel=new JPanel();  
-		panel.setLayout(new GridLayout(1,2));  
-		JButton StrakhovatelB=new JButton("Страхователь");   
-		JButton StrakhovshikB=new JButton("Страховщик"); 
-		//StrakhovshikB.setFont(new Font("TimesRoman", Font.BOLD, 100));
-		//StrakhovshikB.setPreferredSize(new Dimension(500,300));
-		//StrakhovshikB.setBackground(Color.blue);
-		/**    
-		 * Устанавливаем цвет текста кнопки StrakhovatelB    
-		 */  
-		StrakhovatelB.setForeground(Color.RED);   
-		/**    
-		 * Устанавливаем цвет текста кнопки StrakhovshikB    
-		 */   
-		StrakhovshikB.setForeground(Color.BLUE);                    
-		/**    
-		 *Добавляем слушателя к кнопке StrakhovatelB с помощью вызова    
-		 *addActionListener    
-		 */ 
-		StrakhovatelB.addActionListener(new ActionListener() {   
-			public void actionPerformed(ActionEvent e) {    
-				/**      
-				 * Создаем объект класса Strakhovatel и вызываем метод zapusk()      
-				 */    
-				Strakhovatel myStrakhovatel= new Strakhovatel();                               
-				myStrakhovatel.zapusk();    
-		}});     
-		/**    
-		 *Добавляем слушателя к кнопке StrakhovshikB с помощью вызова    
-		 *addActionListener    
-		 */ 
-		StrakhovshikB.addActionListener(new ActionListener() {   
-			public void actionPerformed(ActionEvent e) {     
-				/**      
-				 * Создаем объект класса Strakhovshik и вызываем метод zapusk      
-				 */    
-				Strakhovshik strakh=new Strakhovshik();     
-				strakh.zapusk();              
-		}});      
-		/**    
-		 * Добавляем кнопки StrakhovatelB , StrakhovshikB на панель    
-		 */   
-		panel.add(StrakhovatelB);   
-		panel.add(StrakhovshikB); 
+		pc.PCreatePanel(s,
+						"Добро пожаловать!  Выберите пользователя: ",
+						600,
+						400,
+						new GridLayout(1,2),
+						JFrame.EXIT_ON_CLOSE);
+  		
+		 
+		
+		for(int i=0;i<ButtonName.length;i++) {
+			/**
+			 * Создаем экземпляр класса
+			 */
+        	ButtonName[i] = new JButton();
+        	cc.PJButtonSettings(ButtonName[i], Button_keys_label[i]);
+        	
+        	ButtonName[i].addActionListener(new ActionListener() {   
+    			public void actionPerformed(ActionEvent e) {     
+    				/**
+    				 * Проверка нажатия на кнопку ButtonName[0](button_AddObject)
+    				 */
+    					if (e.getSource() == ButtonName[0]) {
+    						/**      
+    						 * Создаем объект класса Strakhovatel и вызываем метод zapusk()      
+    						 */    
+    						Strakhovatel myStrakhovatel= new Strakhovatel();                               
+    						myStrakhovatel.zapusk(); 
+    					}
+    					/**
+    					 * Проверка нажатия на кнопку ButtonName[1](button_CountFreeArea)
+    					 */
+    					else if(e.getSource() == ButtonName[1]){
+    						/**      
+    						 * Создаем объект класса Strakhovshik и вызываем метод zapusk      
+    						 */    
+    						Strakhovshik strakh=new Strakhovshik();     
+    						strakh.zapusk(); 
+    					}          
+    		}});
+        	
+        	s.getContentPane().add(ButtonName[i]);      	
+		} 
+		
+		for(int i=0;i<ButtonName.length;i++) {
+			//if(i==0)
+				//ButtonName[i].setPreferredSize(new Dimension(500,300));  
+				//ButtonName[i].setBackground(Color.white);
+				//ButtonName[i].setForeground(Color.red);
+				//ButtonName[i].setFont(new Font("TimesRoman", Font.BOLD, 100));
+		}
  
-		/**    
-		 * Создаем панель panel1c    
-		 */   
-		JPanel panel1=new JPanel();  
-		panel1.setLayout(new FlowLayout());   
-		/**    
-		 *Устанавливаем цвет фона панели    
-		 */   
-		panel1.setBackground(Color.WHITE);                       
-		/**    
-		 * Создаём компонент kopiright класса JLabel и добавляем его на панель panel1    
-		 */  
-		JLabel kopiright= new JLabel("copyright © 2018"); 
-		//kopiright.setForeground(Color.RED);
-		//kopiright.setFont(new Font("TimesRoman", Font.BOLD, 100));
-		panel1.add(kopiright);            
-		/**    
-		 *Добавляем panel и panel1 на фрейм    
-		 */   
-		s.add(panel,BorderLayout.CENTER);  
-		s.add(panel1,BorderLayout.PAGE_END); 
 		s.setVisible(true); 
 	}
 } 

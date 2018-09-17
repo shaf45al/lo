@@ -74,30 +74,23 @@ public class Registracya{
      * т.к. окно регистрации отображается на экране      
      */     
 	Strakhovatel.isRun1=true;           
-	/**      
-	 * Выполняем настройку окна      
-	 */     
-	s.setTitle("Создание новой учетной записи");     
-	s.setSize(600,400);        
-	/**      
-	 * Размещаем окно по середине экрана       
-	 */     
-	s.setLocationRelativeTo(null);                        
-	/**      
-	 * Указываем операцию, которая будет произведена при закрытии окна      
-	 */     
-	s.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);      
-	/**     
-	 * Устанавливаем менеджер FlowLayout для расположения  
-	 * компонентов на фрейме    
-	 */     
-	s.setLayout(new FlowLayout());         
+
+	/**    
+	 * Выполняем настройку окна    
+	 */ 
+	PanelCreator pc=new PanelCreator();  
+	pc.PCreatePanel(s,
+					"Создание новой учетной записи",
+					600,
+					400,
+					new FlowLayout(),
+					JFrame.DO_NOTHING_ON_CLOSE);	
+	                            
 	/**      
 	 * Создаем компонент-контерйнер panel класса JPanel      
 	 */     
 	final JPanel panel=new JPanel();     
-	//panel.setBackground(Color.red);
-	//s.getContentPane().setBackground(Color.red);
+	panel.setBackground(s.getContentPane().getBackground());
 	panel.setLayout(new GridBagLayout());          
 	/**      
 	 * Создаем компоненты для личных данных пользователя      

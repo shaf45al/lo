@@ -109,35 +109,29 @@ public class LichnyKab{
 	 * Если введенный пароль верный, то выполняется настройка окна "Личный кабинет"   
 	 */   
 	if(textField.getText().equals(parolProverka)){     
-		System.out.println("Вы правы");            
-		s.setSize(600,400);                 
-		s.setTitle("Личный кабинет");      
-		/**       
-		 * Указываем операцию, которая будет произведена при закрытии окна       
-		 */      
-		s.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);         
-		/**       
-		 * Размещаем окно по середине экрана        
-		 */      
-		s.setLocationRelativeTo(null);                          
-		/**       
-		 * Устанавлваем менеджер GridLayout для расположения компонентов на            
-		 * фрейме       
-		 */      
-		s.setLayout(new FlowLayout());         
+		System.out.println("Вы правы");
+		
+		/**    
+		 * Выполняем настройку окна    
+		 */
+		PanelCreator pc=new PanelCreator();  
+		pc.PCreatePanel(s,
+						"Личный кабинет",
+						600,
+						400,
+						new FlowLayout(),
+						JFrame.HIDE_ON_CLOSE);
+		        
 		/**       
 		 * Создаем компоненты        
 		 * vykhod класса JButton,        
 		 * vnestiVznos класса JButton,        
 		 * ostatokPoVznosamL класса JLabel,       
-		 * polychitVyplaty класса JButton,        
-		 * и компонент-контерйнер panel класса JPanel, который будет содержать    
-		 * вышеперечисленные компоненты       
+		 * polychitVyplaty класса JButton,               
 		 */ 
 		JPanel panel=new JPanel();    
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); 
-		//panel.setBackground(Color.orange);
-		//s.getContentPane().setBackground(Color.orange);
+		panel.setBackground(s.getContentPane().getBackground());
 		JButton vykhod=new JButton("Выход");  
 		JButton vnestiVznos=new JButton("Внести взнос");         
 		JLabel ostatokPoVznosamL= new JLabel("Остаток по страховым взносам,руб: ");    

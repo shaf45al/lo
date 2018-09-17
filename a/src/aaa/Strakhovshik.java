@@ -9,13 +9,12 @@ package aaa;
 import java.awt.Color; 
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.FlowLayout; 
-import java.awt.GridBagConstraints; 
-import java.awt.GridBagLayout; 
-import java.awt.Insets; 
+import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout; 
 import javax.swing.JButton; 
 import javax.swing.JFrame; 
@@ -29,112 +28,78 @@ import javax.swing.JTextField;
  */  
 public class Strakhovshik{ 
  
- /**     
-  * Объявляем конструктор класса    
-  */    
-	public Strakhovshik(){  
-	} 
- 
  /**    
   * Метод zapusk для инициализации и отображения фрейма   
   */   
-	public void zapusk(){   
-		/**   
-		 * Создаём объект класса JFrame   
-		 */   
+	public void zapusk(){    
 		JFrame s=new JFrame();       
-		/**    
-		 * Выполняем настройку окна    
-		 */  
-		s.setTitle("Страховщик");    
-		s.setSize(600,400);    
-		/**    
-		 * Указываем операцию, которая будет произведена при закрытии окна    
-		 */   
-		s.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);    
-		/**    
-		 * Размещаем окно по середине экрана     
-		 */   
-		s.setLocationRelativeTo(null);                         
-		/**   
-		 * Устанавлваем менеджер FlowLayout для расположения компонентов на фрейме   
-		 */   
-		s.setLayout(new FlowLayout());
-		
+		PanelCreator pc=new PanelCreator();  
+		pc.PCreatePanel(s,
+						"Страховщик",
+						600,
+						400,
+						new FlowLayout(),
+						JFrame.HIDE_ON_CLOSE);	
  
-		/**    
-		 * Создаем компонент-контерйнер panel класса JPanel, который будет содержать панель   
-		 *для вида страхования, метки и кнопку "Сохранить"    
-		 */   
-		JPanel panel=new JPanel();   
+
+		JPanel panel=new JPanel();   	
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		panel.setBackground(s.getContentPane().getBackground());
+		  
+		JLabel label=new JLabel("Введите страховые тарифы!");    
+		label.setForeground(Color.RED); 
+		//label.setFont(new Font("TimesRoman", Font.BOLD, 100));
 		
-		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));      
-		/**    
-		 * Создаем компонент-контерйнер panelStrPredpRisk класса JPanel для вида страхования    
-		 */   
-		JPanel panelStrPredpRisk=new JPanel();   
-		//panelStrPredpRisk.setBackground(Color.BLUE);
-		//panel.setBackground(Color.BLUE);
-		//s.getContentPane().setBackground(Color.BLUE);
-		/**    
-		 * Создаем компонент label класса JLabel     
-		 */   
-		JLabel label=new JLabel("Введите страховые тарифы!");   
-		/**    
-		 * Устанавливаем цвет текста метки label    
-		 */   
-		label.setForeground(Color.RED);     
-		/**    
-		 * Создаем компонент rules класса JLabel для правил ввода коэффициента     
-		 */   
-		JLabel rules=new JLabel("Правила ввода коэффициентов: .5=0.5 и 5.=5.0");   
-		/**    
-		 * Создаем компонент VnestiKoef класса JButton    
-		 */  
-		JButton VnestiKoef=new JButton("Сохранить");  
+		JButton VnestiKoef=new JButton("Сохранить"); 
+		//VnestiKoef.setPreferredSize(new Dimension(500,300));  
+		//VnestiKoef.setBackground(Color.white);
+		//VnestiKoef.setForeground(Color.red);
+		//VnestiKoef.setFont(new Font("TimesRoman", Font.BOLD, 100));
+		
 		 final JTextField predprKoefTF=new JTextField("0");       
 		 //predprKoefTF.setBackground(Color.BLUE);
+		
+		 /**    
+			 * Создаем компонент predprKoefL класса JLabel    
+			 */   
+			JLabel predprKoefL=new JLabel("Коэффициент для расчета страховых взносов: "); 
+			//predprKoefL.setForeground(Color.RED); 
+			//predprKoefL.setFont(new Font("TimesRoman", Font.BOLD, 100));
+			/**   
+			 *  В поле predprKoefTF устанавливаем значение, полученное из метода getPredKoef()    
+			 * класса Formuly     
+			 */   
+			predprKoefTF.setText(Double.toString(OsnF.obj2.getPredKoef())); 
+			
+			/**
+			 * чтобы текстовое поле не растягивалось вертикально
+			 */
+			predprKoefTF.setMaximumSize(new Dimension(300, predprKoefTF.getMinimumSize().height));
+	 		
+		 
 		/**    
-		 * Устанавливаем выравнивание компонентов panelStrPredpRisk, label и VnestiKoef   
-		 *(по середине)    
+		 * Устанавливаем выравнивание компонентов (по середине)    
 		 */   
-		panelStrPredpRisk.setAlignmentX(Component.CENTER_ALIGNMENT);    
+		predprKoefL.setAlignmentX(Component.CENTER_ALIGNMENT);  
+		predprKoefTF.setAlignmentX(Component.CENTER_ALIGNMENT);    
 		label.setAlignmentX(Component.CENTER_ALIGNMENT);   
 		VnestiKoef.setAlignmentX(Component.CENTER_ALIGNMENT); 
-		rules.setAlignmentX(Component.CENTER_ALIGNMENT); 
 		/**    
 		 * Добавляем компоненты label, panelStrPredpRisk, VnestiKoef на панель panel    
 		 */  
-		panel.add(label);  
-		panel.add(panelStrPredpRisk);  
-		panel.add(VnestiKoef);   
-		panel.add(rules);
+		panel.add(Box.createVerticalGlue(),0); 
+		panel.add(label); 
+		panel.add(predprKoefL); 
+		panel.add(Box.createVerticalGlue());
+		panel.add(predprKoefTF);
+		panel.add(Box.createVerticalGlue());
+		panel.add(VnestiKoef);  
+		panel.add(Box.createVerticalGlue());  
+		
 		/**    
 		 * Добавляем основную панель на фрейм   
 		 */   
-		s.add(panel);       
-		/**    
-		 * Устанавливаем вид менеджера GridBagLayout для размещения компонентов на панели   
-		 * panelStrPredpRisk    
-		 */   
-		panelStrPredpRisk.setLayout(new GridBagLayout()); 
- 
-		/**    
-		 * Создаем компонент predprKoefL класса JLabel    
-		 */   
-		JLabel predprKoefL=new JLabel("Коэффициент для расчета страховых взносов: "); 
-		/**   
-		 *  В поле predprKoefTF устанавливаем значение, полученное из метода getPredKoef()    
-		 * класса Formuly     
-		 */   
-		predprKoefTF.setText(Double.toString(OsnF.obj2.getPredKoef()));                        
-		/**    
-		 * Добавляем компоненты predprKoefL, predprKoefTF, VnestiKoef на панель   
-		 * panelStrPredpRisk    
-		 */   
-		panelStrPredpRisk.add(predprKoefL,new GridBagConstraints(0,0,1,1,1,1,GridBagConstraints.NORTH,GridBagConstraints.HORIZONTAL,new Insets(1,1,1,1),0,0));   
-		panelStrPredpRisk.add(predprKoefTF,new GridBagConstraints(0,1,1,1,1,1,GridBagConstraints.NORTH,GridBagConstraints.HORIZONTAL,new Insets(1,1,1,1),0,0));   
-		panelStrPredpRisk.add(VnestiKoef,new GridBagConstraints(0,2,1,1,1,1,GridBagConstraints.NORTH,GridBagConstraints.HORIZONTAL,new Insets(1,1,1,1),0,0));     
+		s.add(panel); 
 		/**    
 		 * Добавляем слушателя к кнопке VnestiKoef с помощью вызова    
 		 *addActionListener.    

@@ -7,6 +7,7 @@ import java.awt.Color;
  * Подключаем библиотеки  
  */ 
 import java.awt.Component;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout; 
 import javax.swing.Box; 
@@ -68,16 +69,17 @@ public class StrVyplata{
 				s.setVisible(false);   
 				}   
 			else {       
-				/**      
-				 * Выполняем настройку окна "Страховая выплата"      
-				 */    
-				s.setTitle("Страховая выплата"); 
-				s.setSize(600,400);       
-				/**      
-				 * Размещаем окно по середине экрана       
-				 */   
-				s.setLocationRelativeTo(null);                         
-				s.setLayout(new GridLayout());       
+				/**    
+				 * Выполняем настройку окна    
+				 */ 
+				PanelCreator pc=new PanelCreator();  
+				pc.PCreatePanel(s,
+								"Страховая выплата",
+								600,
+								400,
+								new GridLayout(),
+								JFrame.HIDE_ON_CLOSE);
+				     
 				/**      
 				 * Создаем компоненты       
 				 * label класса JLabel,       
@@ -89,6 +91,7 @@ public class StrVyplata{
 				 */   
 				JPanel panel=new JPanel();    
 				panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); 
+				panel.setBackground(s.getContentPane().getBackground());
  
 				JLabel label=new JLabel("Сумма страховой выплаты, руб:");  
 				/**      

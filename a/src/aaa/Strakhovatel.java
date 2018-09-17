@@ -2,6 +2,7 @@
  * Устанавливаем принадлежность класса к пакету  
  */
 package aaa;
+import java.awt.BorderLayout;
 /**  
  * Подключаем библиотеки  
  */
@@ -41,34 +42,25 @@ public class Strakhovatel{
 		 * Создаём объект класса JFrame   
 		 */  
 		JFrame s=new JFrame();   
+ 
+		PanelCreator pc=new PanelCreator();
 		/**    
 		 * Выполняем настройку окна    
-		 */  
-		s.setTitle("Страхователь");  
-		s.setSize(500,400);  
-		/**    
-		 * Указываем операцию, которая будет произведена при закрытии окна    
 		 */   
-		s.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);   
-		/**    
-		 * Размещаем окно по середине экрана     
-		 */  
-		s.setLocationRelativeTo(null);               
-		/**   
-		 * Устанавливаем менеджер GridLayout для расположения компонентов на фрейме   
-		 */ 
-		s.setLayout(new GridLayout());     
+		pc.PCreatePanel(s,
+						"Страхователь",
+						500,
+						400,
+						new BoxLayout(s.getContentPane(), BoxLayout.Y_AXIS),
+						JFrame.HIDE_ON_CLOSE);
+		     
 		/**    
 		 * Создаем компоненты     
 		 * zaregat класса JButton,     
 		 * lichKab класса JButton,     
-		 * podatZayavL класса JLabel,    
-		 * и компонент-контерйнер panel класса JPanel, который будет содержать   
-		 * вышеперечисленные компоненты    
+		 * podatZayavL класса JLabel      
 		 */  
-		JPanel panel=new JPanel(); 
-		//panel.setBackground(Color.BLUE);
-		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));   
+	  
 		JButton zaregat=new JButton("Регистрация");  
 		zaregat.setForeground(Color.BLUE); 
 		JButton lichKab=new JButton("Войти в личный кабнет");  
@@ -84,15 +76,15 @@ public class Strakhovatel{
 		/**    
 		 * Добавляем компоненты lichKab, podatZayavL, zaregat на панель    
 		 */  
-		panel.add(Box.createVerticalGlue(),0);  
-		panel.add(lichKab);    
+		s.getContentPane().add(Box.createVerticalGlue(),0);  
+		s.getContentPane().add(lichKab);    
 		/**    
 		 * Вставляем пружину    
 		 */   
-		panel.add(Box.createVerticalGlue());  
-		panel.add(podatZayavL); 
-		panel.add(zaregat); 
-		panel.add(Box.createVerticalGlue());  
+		s.getContentPane().add(Box.createVerticalGlue());  
+		s.getContentPane().add(podatZayavL); 
+		s.getContentPane().add(zaregat); 
+		s.getContentPane().add(Box.createVerticalGlue());  
  
 		/**    
 		 * Добавляем слушателя к кнопке zaregat с помощью вызова    
@@ -121,7 +113,6 @@ public class Strakhovatel{
 			}  
 		});   
 		
-		s.add(panel); 
 		s.setVisible(true);  
 	}   
 }
