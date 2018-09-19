@@ -58,6 +58,7 @@ public class Strakhovshik{
 		
 		 final JTextField predprKoefTF=new JTextField("0");       
 		 //predprKoefTF.setBackground(Color.BLUE);
+		 //predprKoefTF.setForeground(Color.red);
 		
 		 /**    
 			 * Создаем компонент predprKoefL класса JLabel    

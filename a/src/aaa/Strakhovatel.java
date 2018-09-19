@@ -62,9 +62,15 @@ public class Strakhovatel{
 		 */  
 	  
 		JButton zaregat=new JButton("Регистрация");  
-		zaregat.setForeground(Color.BLUE); 
+		zaregat.setForeground(Color.BLUE);
+		//zaregat.setPreferredSize(new Dimension(500,300));  
+		//zaregat.setBackground(Color.white);
+		//zaregat.setFont(new Font("TimesRoman", Font.BOLD, 100));
+		
+		
 		JButton lichKab=new JButton("Войти в личный кабнет");  
 		JLabel podatZayavL=new JLabel("Еще не зарегистрированы?"); 
+		//podatZayavL.setFont(new Font("TimesRoman", Font.BOLD, 100));
 		
 		/**    
 		 * Устанавливаем выравнивание компонентов zaregat, lichKab и podatZayavL   

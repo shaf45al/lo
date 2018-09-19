@@ -132,10 +132,25 @@ public class LichnyKab{
 		JPanel panel=new JPanel();    
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS)); 
 		panel.setBackground(s.getContentPane().getBackground());
-		JButton vykhod=new JButton("Выход");  
-		JButton vnestiVznos=new JButton("Внести взнос");         
-		JLabel ostatokPoVznosamL= new JLabel("Остаток по страховым взносам,руб: ");    
-		JButton polychitVyplaty=new JButton("Получить страховую выплату");         
+		
+		
+		JButton vykhod=new JButton("Выход"); 
+		//vykhod.setPreferredSize(new Dimension(500,300));  
+		//vykhod.setBackground(Color.white);
+		//vykhod.setFont(new Font("TimesRoman", Font.BOLD, 100));
+		
+		JButton vnestiVznos=new JButton("Внести взнос");  
+		//vnestiVznos.setPreferredSize(new Dimension(500,300));  
+		//vnestiVznos.setBackground(Color.white);
+		//vnestiVznos.setFont(new Font("TimesRoman", Font.BOLD, 100));
+		
+		JLabel ostatokPoVznosamL= new JLabel("Остаток по страховым взносам,руб: "); 
+		//ostatokPoVznosamL.setFont(new Font("TimesRoman", Font.BOLD, 100));
+		
+		JButton polychitVyplaty=new JButton("Получить страховую выплату"); 
+		//polychitVyplaty.setPreferredSize(new Dimension(500,300));  
+		//polychitVyplaty.setBackground(Color.red);
+		//polychitVyplaty.setFont(new Font("TimesRoman", Font.BOLD, 100));
 		/**      
 		 * В текстовый компонент ostatokPoVznosam устанавливается значение,   
 		 * полученное из метода UznatOstatok() класса Formuly.      

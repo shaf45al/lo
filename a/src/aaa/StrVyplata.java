@@ -101,9 +101,12 @@ public class StrVyplata{
 				JLabel strVyplataL=new   JLabel(String.valueOf(UznatStrVyp(Integer.parseInt(poluchD)))); 
 				//strVyplataL.setFont(strVyplataL.getFont().deriveFont(300f));
  
-				JLabel pravila=new JLabel("Для получения страховой выплаты");    
+				JLabel pravila=new JLabel("Для получения страховой выплаты");  
+				//pravila.setFont(new Font("TimesRoman", Font.BOLD, 100));
 				JLabel pravila1=new  JLabel("обратитесь в приемный отдел по адресу: ул.Гафури, д.76"); 
 				//pravila.setForeground(Color.pink);pravila1.setForeground(Color.pink);
+				//pravila1.setFont(new Font("TimesRoman", Font.BOLD, 100));
+				
 				/**      
 				 * Устанавливаем выравнивание компонентов label, strVyplataL, pravila и   
 				 * pravila1 (по середине)      

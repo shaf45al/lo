@@ -89,10 +89,12 @@ public class OsnF {
 		
 		for(int i=0;i<ButtonName.length;i++) {
 			//if(i==0)
-				//ButtonName[i].setPreferredSize(new Dimension(500,300));  
+				//ButtonName[i].setPreferredSize(new Dimension(100,100));  
 				//ButtonName[i].setBackground(Color.white);
 				//ButtonName[i].setForeground(Color.red);
 				//ButtonName[i].setFont(new Font("TimesRoman", Font.BOLD, 100));
+			//else
+			//ButtonName[i].setForeground(Color.blue);
 		}
  
 		s.setVisible(true); 

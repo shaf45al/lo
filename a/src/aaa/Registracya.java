@@ -4,10 +4,12 @@
 package aaa;
 
 import java.awt.Color;
+import java.awt.Dimension;
 /**  
  * Подключаем библиотеки  
  */ 
 import java.awt.FlowLayout; 
+import java.awt.Font;
 import java.awt.GridBagConstraints; 
 import java.awt.GridBagLayout; 
 import java.awt.Insets; 
@@ -16,6 +18,8 @@ import java.awt.event.ActionListener;
 import java.io.FileWriter; 
 import java.io.IOException; 
  
+
+
 import javax.swing.JButton; 
 import javax.swing.JComboBox; 
 import javax.swing.JFrame; 
@@ -91,13 +95,21 @@ public class Registracya{
 	 */     
 	final JPanel panel=new JPanel();     
 	panel.setBackground(s.getContentPane().getBackground());
-	panel.setLayout(new GridBagLayout());          
+	panel.setLayout(new GridBagLayout());  
+	
+	
 	/**      
 	 * Создаем компоненты для личных данных пользователя      
 	 */     
-	final JButton vykhod=new JButton("Выход");      
-	final JButton prodolj=new JButton("Продолжить");      
+	final JButton vykhod=new JButton("Выход");  
+	
+	final JButton prodolj=new JButton("Продолжить"); 
+	//prodolj.setPreferredSize(new Dimension(500,300));  
+	//prodolj.setBackground(Color.white);
+	//prodolj.setFont(new Font("TimesRoman", Font.BOLD, 100));
+	
 	final JTextField FIO=new JTextField();     
+	//FIO.setBackground(Color.ORANGE);
 	final JTextField parolTF=new JTextField(9);     
 	/**     
 	 * Устанавливаем варианты для combobox      
@@ -107,6 +119,7 @@ public class Registracya{
 	};     
 	final JComboBox<String> comboBoxVidStr = new JComboBox<String>(vidStr);     
 	//comboBoxVidStr.setBackground(Color.BLUE);
+	//comboBoxVidStr.setPreferredSize(new Dimension(500,300)); 
 	final JButton PodatZayavky=new JButton("Завершить регистрацию");           
 	final JLabel FIOL= new JLabel("Введите ФИО: ");     
 	final JLabel parolL= new JLabel("Придумайте пароль: ");    
